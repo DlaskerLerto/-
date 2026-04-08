@@ -243,16 +243,18 @@ def send(vk, peer_id, text, keyboard=None):
 
 def kb(buttons, one_time=False, inline=False):
     rows = []
+def kb(buttons, one_time=False, inline=False):
+    rows = []
     for row in buttons:
         r = []
         for btn in row:
             label, color = btn if isinstance(btn, tuple) else (btn, "secondary")
             r.append({
-                "action": {"type": "text", "label": label[:40]},
+                "action": {"type": "text", "label": label[:40], "payload": "{}"},
                 "color": color
             })
         rows.append(r)
-    return {"one_time": one_time, "inline": inline, "buttons": rows}
+    return {"one_time": one_time, "inline": inline, "buttons": rows}}
 
 # ─── LEVEL SYSTEM ─────────────────────────────────────────────────────────────
 
