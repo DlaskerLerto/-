@@ -254,7 +254,7 @@ def kb(buttons, one_time=False, inline=False):
                 "color": color
             })
         rows.append(r)
-    return {"one_time": one_time, "inline": inline, "buttons": rows}}
+    return {"one_time": one_time, "inline": inline, "buttons": rows}
 
 # ─── LEVEL SYSTEM ─────────────────────────────────────────────────────────────
 
